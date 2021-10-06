@@ -1,0 +1,11 @@
+{
+  "name": "app",
+  "private": "true",
+  "dependencies": {
+    "@hotwired/stimulus": "^3.0.0",
+    "@hotwired/turbo-rails": "^7.0.1",
+    "bulma": "^0.9.3",
+    "esbuild": "^0.13.4",
+    "sass": "^1.42.1"
+  }
+}
