@@ -18,5 +18,39 @@
     margin-top: 1.5em;
     margin-bottom: 1.5em;
   }
+}
 
+.add-fragment {
+  opacity: 0;
+  position: relative;
+  height: 5px;
+  left: -50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: opacity 0.25s ease;
+
+  &:hover {
+    opacity: 1;
+    transition: opacity 0.25s ease;
+  }
+
+  .add-fragment-button-container {
+    width: 50px;
+  }
+
+  .add-fragment-indicator {
+    flex-grow: 1;
+    width: 100%;
+    height: 1px;
+    background-color: $link;
+  }
+}
+
+.button.is-round {
+  border-radius: 100%;
+  padding: 0;
+  margin: 0;
+  width: 2em;
+  height: 2em;
 }

@@ -1,0 +1,20 @@
+<div class="add-fragment">
+  <div class="add-fragment-button-container">
+    <%= form_with(model: Fragment.new(
+        element: "p",
+        data: "edit me",
+        position: (fragment.position + 1))) do |form| %>
+      <%= form.text_field :element, hidden: true %>
+      <%= form.text_field :data, hidden: true %>
+      <%= form.text_field :position, hidden: true %>
+
+      <button
+        class="button is-light is-round"
+        data-controller="add-fragment"
+        data-action="click->add-fragment#click">
+        +
+      </button>
+    <% end %>
+  </div>
+  <hr class="add-fragment-indicator"></hr>
+</div>
