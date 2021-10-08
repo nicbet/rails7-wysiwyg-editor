@@ -1,0 +1,22 @@
+<%= turbo_frame_tag dom_id(fragment) do %>
+
+  <div
+    class="fragment <%= fragment.element %>"
+    data-controller="editable"
+    data-action="
+      click->editable#click
+      blur->editable#blur
+      keydown->editable#keyDown
+      mouseup->editable#mouseUp
+      mousedown->editable#mouseDown">
+
+    <%= fragment.render %>
+
+    <%= form_with(url: fragment_path(fragment.id), method: :patch) do |form| %>
+      <%= form.text_area(:data, hidden: true) %>
+      <%= form.submit("Save", hidden: true) %>
+    <% end %>
+
+  </div>
+
+<% end %>

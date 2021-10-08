@@ -3,5 +3,11 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
+import EditableController from "./editable_controller.js"
+application.register("editable", EditableController)
+
+import FormatController from "./format_controller.js"
+application.register("format", FormatController)
+
+import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
