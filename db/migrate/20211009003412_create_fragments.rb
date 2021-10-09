@@ -5,6 +5,7 @@ class CreateFragments < ActiveRecord::Migration[7.0]
       t.string :data, null: false, default: ""
       t.integer :position
       t.string :meta, default: ""
+      t.references :document
 
       t.timestamps
     end

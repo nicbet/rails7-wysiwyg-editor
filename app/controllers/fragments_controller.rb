@@ -1,23 +1,27 @@
 class FragmentsController < ApplicationController
+  before_action :set_document
   before_action :set_fragment, only: [:update]
 
   def create
-    @fragment = Fragment.new(fragment_params)
-    if @fragment.valid?
-      @fragment.save
-    end
-    redirect_to(root_path)
+    @fragment = @document.fragments.build(fragment_params)
+    @fragment.save
+
+    redirect_to(document_path(@document))
   end
 
   def update
-    @fragment.update(data: params[:data])
+    @fragment.update(fragment_params)
     render @fragment
   end
 
   private
 
   def set_fragment
-    @fragment = Fragment.find(params[:id])
+    @fragment = @document.fragments.find(params[:id])
+  end
+
+  def set_document
+    @document = Document.find(params[:document_id])
   end
 
   def fragment_params

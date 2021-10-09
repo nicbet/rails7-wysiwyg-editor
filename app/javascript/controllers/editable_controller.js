@@ -48,7 +48,7 @@ export default class extends Controller {
     console.log(markdown)
 
     // Dynamically fill out the form data and submit
-    this.element.querySelector("#data").value = markdown
+    this.element.querySelector("#fragment_data").value = markdown
     this.element.querySelector("form").requestSubmit()
   }
 }

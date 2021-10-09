@@ -1,9 +1,10 @@
 <div class="add-fragment">
   <div class="add-fragment-button-container">
-    <%= form_with(model: Fragment.new(
+    <%= form_with(
+      model: [@document, @document.fragments.build(
         element: "p",
         data: "edit me",
-        position: (fragment.position + 1))) do |form| %>
+        position: (fragment.position + 1))]) do |form| %>
       <%= form.text_field :element, hidden: true %>
       <%= form.text_field :data, hidden: true %>
       <%= form.text_field :position, hidden: true %>

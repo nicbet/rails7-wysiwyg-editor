@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root "document#index"
+  root "documents#index"
 
-  resources "fragments"
+  resources :documents do
+    resources :fragments
+  end
 end

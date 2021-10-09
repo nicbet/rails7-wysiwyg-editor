@@ -1,4 +1,6 @@
 class Fragment < ApplicationRecord
+  belongs_to :document
+
   acts_as_list
 
    MD_MAPPING = {

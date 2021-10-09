@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-1">Documents</h1>
+
+    <%= link_to "New document", new_document_path, class: "button mb-5" %>
+
+
+    <%= render @documents %>
+
+  </div>
+</section>

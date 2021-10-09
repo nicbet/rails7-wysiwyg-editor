@@ -12,7 +12,7 @@
 
     <%= fragment.render %>
 
-    <%= form_with(url: fragment_path(fragment.id), method: :patch) do |form| %>
+    <%= form_with(model: [@document, fragment]) do |form| %>
       <%= form.text_area(:data, hidden: true) %>
       <%= form.submit("Save", hidden: true) %>
     <% end %>
