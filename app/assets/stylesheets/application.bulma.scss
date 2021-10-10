@@ -38,10 +38,17 @@
 
 @import 'bulma/bulma';
 @import 'tippy.js/dist/tippy';
+@import 'tippy.js/themes/light';
+@import 'css.gg/icons/all';
+@import '@sweetalert2/theme-bulma/bulma.min';
 
 @import "document";
 @import "fragment";
 
 html, body {
   background-color: white;
+}
+
+.context-menu {
+  box-shadow: none;
 }

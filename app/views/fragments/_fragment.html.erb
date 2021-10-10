@@ -1,21 +1,36 @@
 <%= turbo_frame_tag dom_id(fragment) do %>
 
-  <div
-    class="fragment <%= fragment.element %>"
-    data-controller="editable"
-    data-action="
-      click->editable#click
-      blur->editable#blur
-      keydown->editable#keyDown
-      mouseup->editable#mouseUp
-      mousedown->editable#mouseDown">
+  <div class="fragment-wrapper <%= fragment.element %>" data-controller="editable change-fragment">
+    <div class="fragment-button-container">
+      <button
+        class="button is-small is-light is-round"
+        data-action="click->change-fragment#showMenu">
+        <i class="gg-chevron-down"></i>
+      </button>
+    </div>
+    <div class="fragment-container">
+      <div
+        class="fragment <%= fragment.element %>"
+        data-editable-target="editable"
+        data-action="
+          click->editable#click
+          blur->editable#blur
+          keydown->editable#keyDown
+          paste->editable#paste
+          mouseup->editable#mouseUp
+          mousedown->editable#mouseDown">
+        <%= fragment.render %>
 
-    <%= fragment.render %>
+        <%= form_with(model: [@document, fragment]) do |form| %>
+          <%= form.text_area(:data, hidden: true) %>
+          <%= form.text_field :element, hidden: true %>
+          <%= form.text_field :meta, hidden: true %>
+          <%= form.text_field :position, hidden: true %>
+          <%= form.submit("Save", hidden: true) %>
+        <% end %>
 
-    <%= form_with(model: [@document, fragment]) do |form| %>
-      <%= form.text_area(:data, hidden: true) %>
-      <%= form.submit("Save", hidden: true) %>
-    <% end %>
+      </div>
+    </div>
   </div>
 
 <% end %>

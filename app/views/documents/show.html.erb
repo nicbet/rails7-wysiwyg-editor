@@ -1,18 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <div class="document container">
-  <h1 class="title is-3"><%= @document.title %></h1>
-  <h2 class="subtitle is-5 has-text-grey"><%= @document.note %></h2>
+  <h1 class="title is-3 is-document-title"><%= @document.title %></h1>
+  <h2 class="subtitle is-5 has-text-grey"><span class="tag is-link is-dark"><%= @document.note %></span></h2>
   <hr class="mt-2 mb-5">
 
-  <% @fragments.each do |fragment| %>
-    <%= render fragment %>
+  <%= turbo_frame_tag :fragments do %>
+
+    <% @fragments.each do |fragment| %>
+      <%= render fragment %>
+    <% end %>
+
   <% end %>
+
+  <!-- Links -->
+  <div class="mt-6">
+    <hr>
+    <div class="field is-grouped">
+      <div class="control is-expanded">
+        <%= link_to "Back to Documents", documents_path %>
+      </div>
+    </div>
+
+  </div>
+
 </div>
 
-<div>
-  <%= link_to "Edit this document", edit_document_path(@document) %> |
-  <%= link_to "Back to documents", documents_path %>
-
-  <%= button_to "Destroy this document", document_path(@document), method: :delete %>
-</div>

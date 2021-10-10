@@ -1,19 +1,18 @@
-<div class="add-fragment">
+<div class="add-fragment" data-controller="add-fragment">
   <div class="add-fragment-button-container">
     <%= form_with(
       model: [@document, @document.fragments.build(
         element: "p",
         data: "edit me",
         position: (fragment.position + 1))]) do |form| %>
-      <%= form.text_field :element, hidden: true %>
       <%= form.text_field :data, hidden: true %>
+      <%= form.text_field :element, hidden: true %>
+      <%= form.text_field :meta, hidden: true %>
       <%= form.text_field :position, hidden: true %>
-
       <button
-        class="button is-light is-round"
-        data-controller="add-fragment"
-        data-action="click->add-fragment#click">
-        +
+        class="button is-light is-round is-small"
+        data-action="click->add-fragment#showMenu">
+        <i class="gg-math-plus"></i>
       </button>
     <% end %>
   </div>

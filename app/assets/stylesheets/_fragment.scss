@@ -1,12 +1,24 @@
 .fragment {
-  margin-top: 1em;
-  margin-bottom: 1em;
-
+  padding-top: 5px;
+  padding-bottom: 5px;
   &.h1 {
-    margin-bottom: 1.5em;
     h1 {
       font-size: 32px !important;
-      font-weight: 700;
+      font-weight: 600;
+    }
+  }
+
+  &.h2 {
+    h2 {
+      font-size: 26px !important;
+      font-weight: 500;
+    }
+  }
+
+  &.h3 {
+    h3 {
+      font-size: 22px !important;
+      font-weight: 400;
     }
   }
 
@@ -15,16 +27,74 @@
   }
 
   &.pre {
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    pre {
+      background-color: #272822;
+      border-radius: 5px;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.11),
+                  0 2px 2px rgba(0,0,0,0.11),
+                  0 4px 4px rgba(0,0,0,0.11),
+                  0 6px 8px rgba(0,0,0,0.11),
+                  0 8px 16px rgba(0,0,0,0.11);
+    }
+  }
+}
+
+.fragment-wrapper {
+  // background-color: bisque;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  left: -50px;
+  width: 53em;
+
+  &:hover {
+    .fragment-button-container {
+      opacity: 1;
+      transition: opacity 0.25s ease;
+    }
+  }
+
+  .fragment-button-container {
+    --ggs: 0.5;
+    position: relative;
+    width: 50px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .fragment-container {
+    width: 100%;
+    flex-grow: 1;
+  }
+}
+
+.fragment-wrapper.h1 {
+  .fragment-button-container {
+    line-height: 36px;
+  }
+}
+
+.fragment-wrapper.h2 {
+  .fragment-button-container {
+    line-height: 30px;
+  }
+}
+
+.fragment-wrapper.h3 {
+  .fragment-button-container {
+    line-height: 28px;
   }
 }
 
 .add-fragment {
   opacity: 0;
   position: relative;
-  height: 5px;
+  height: 10px;
   left: -50px;
+  width: 53em;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -36,6 +106,7 @@
   }
 
   .add-fragment-button-container {
+    --ggs: 0.5;
     width: 50px;
   }
 
@@ -48,9 +119,29 @@
 }
 
 .button.is-round {
-  border-radius: 100%;
+  border-radius: 100% !important;
   padding: 0;
   margin: 0;
   width: 2em;
   height: 2em;
+}
+
+.format-menu {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  a {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    flex-grow: 1;
+  }
+}
+
+ .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
 }

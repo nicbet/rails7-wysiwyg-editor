@@ -35,3 +35,81 @@ export function show_format_selection_menu(element) {
     onHidden: (instance) => {instance.destroy()}
   }).show()
 }
+
+function add_fragment_menu() {
+  return(`
+  <div class="add-fragment-menu">
+    <div class="dropdown-content context-menu">
+      <a class="dropdown-item" data-action="mousedown->add-fragment#h1">
+        <span class="has-text-weight-bold">Heading 1</span>
+      </a>
+      <a class="dropdown-item" data-action="mousedown->add-fragment#h2">
+        <span class="has-text-weight-semibold">Heading 2</span>
+      </a>
+      <a class="dropdown-item" data-action="mousedown->add-fragment#h3">
+        Heading 3
+      </a>
+      <hr class="dropdown-divider">
+      <a class="dropdown-item" data-action="mousedown->add-fragment#paragraph">
+        Paragraph
+      </a>
+      <hr class="dropdown-divider">
+      <a class="dropdown-item" data-action="mousedown->add-fragment#pre">
+        Code Block
+      </a>
+    </div>
+  </div>
+  `)
+}
+
+export function show_add_fragment_menu(element) {
+  return tippy(element, {
+    allowHTML: true,
+    content: add_fragment_menu(),
+    interactive: true,
+    interactiveBorder: 100,
+    inlinePositioning: true,
+    hideOnClick: true,
+    placement: "bottom",
+    offset: [0,0],
+    theme: "light",
+    onHidden: (instance) => {instance.destroy()}
+  }).show()
+}
+
+function change_fragment_menu() {
+  return(`
+  <div class="change-fragment-menu">
+    <div class="dropdown-content context-menu">
+      <a class="dropdown-item" data-action="mousedown->change-fragment#h1">
+        <span class="has-text-weight-bold">Heading 1</span>
+      </a>
+      <a class="dropdown-item" data-action="mousedown->change-fragment#h2">
+        <span class="has-text-weight-semibold">Heading 2</span>
+      </a>
+      <a class="dropdown-item" data-action="mousedown->change-fragment#h3">
+        Heading 3
+      </a>
+      <hr class="dropdown-divider">
+      <a class="dropdown-item" data-action="mousedown->change-fragment#paragraph">
+        Paragraph
+      </a>
+    </div>
+  </div>
+  `)
+}
+
+export function show_change_fragment_menu(element) {
+  return tippy(element, {
+    allowHTML: true,
+    content: change_fragment_menu(),
+    interactive: true,
+    interactiveBorder: 100,
+    inlinePositioning: true,
+    hideOnClick: true,
+    placement: "bottom",
+    offset: [0,0],
+    theme: "light",
+    onHidden: (instance) => {instance.destroy()}
+  }).show()
+}

@@ -12,16 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :title, class: "label" %>
+    <div class="control">
+      <%= form.text_field :title, class: "input" %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :note %>
-    <%= form.text_field :note %>
+    <%= form.label :note, class: "label" %>
+    <div class="control">
+      <%= form.text_field :note, class: "input" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions mt-5">
+    <%= form.submit nil, class: "button is-link" %>
   </div>
 <% end %>

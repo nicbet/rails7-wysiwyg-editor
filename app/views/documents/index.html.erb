@@ -4,8 +4,11 @@
   <div class="container">
     <h1 class="title is-1">Documents</h1>
 
-    <%= link_to "New document", new_document_path, class: "button mb-5" %>
+    <div class="field is-grouped is-grouped-right">
+      <div class="control"><%= link_to "New Document", new_document_path, class: "button is-link mb-5" %></div>
+    </div>
 
+    <hr class="mt-3 mb-6">
 
     <%= render @documents %>
 

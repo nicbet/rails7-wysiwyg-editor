@@ -3,6 +3,12 @@
 
 import { application } from "./application"
 
+import AddFragmentController from "./add_fragment_controller.js"
+application.register("add-fragment", AddFragmentController)
+
+import ChangeFragmentController from "./change_fragment_controller.js"
+application.register("change-fragment", ChangeFragmentController)
+
 import EditableController from "./editable_controller.js"
 application.register("editable", EditableController)
 
