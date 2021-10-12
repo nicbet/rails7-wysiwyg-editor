@@ -24,6 +24,10 @@
 
   &.p {
     line-height: 26px;
+    a {
+      pointer-events: none;
+      text-decoration: underline;
+    }
   }
 
   &.pre {
@@ -144,4 +148,13 @@
     align-items: center;
     width: 24px;
     height: 24px;
+}
+
+.medium-editor-toolbar li button:hover {
+  background-color: #000;
+  color: rgb(252, 250, 121);
+}
+.medium-editor-toolbar li .medium-editor-button-active {
+  background-color: #000;
+  color: #FFF;
 }

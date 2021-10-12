@@ -8,9 +8,11 @@ import { show_format_selection_menu } from "../lib/context_menus"
 export default class extends Controller {
   static targets = [ "editable" ]
   fragment_type = ""
+  editor = null
 
   connect() {
     let classes = this.element.classList
+    let html = this.editableTarget.innerHTML
     if (classes.contains("h1")) { this.fragment_type = "h1" }
     if (classes.contains("h2")) { this.fragment_type = "h2" }
     if (classes.contains("h3")) { this.fragment_type = "h3" }

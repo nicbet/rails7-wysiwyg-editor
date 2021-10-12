@@ -5,6 +5,8 @@
     "@hotwired/stimulus": "^3.0.0",
     "@hotwired/turbo-rails": "^7.0.1",
     "@sweetalert2/theme-bulma": "^5.0.5",
+    "@tiptap/core": "^2.0.0-beta.122",
+    "@tiptap/starter-kit": "^2.0.0-beta.123",
     "bulma": "^0.9.3",
     "css.gg": "^2.0.0",
     "esbuild": "^0.13.4",

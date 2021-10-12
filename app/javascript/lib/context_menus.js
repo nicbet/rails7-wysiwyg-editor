@@ -15,6 +15,10 @@ function format_selection_menu() {
       Strike
     </a>
     <span class="ml-1 mr-1 has-text-grey">|</span>
+    <a class="has-text-white" data-action="mousedown->format#link">
+      Link
+    </a>
+    <span class="ml-1 mr-1 has-text-grey">|</span>
     <a class="has-text-white" data-action="mousedown->format#code">
       Code
     </a>
@@ -30,7 +34,7 @@ export function show_format_selection_menu(element) {
     interactive: true,
     interactiveBorder: 100,
     inlinePositioning: true,
-    maxWidth: 250,
+    maxWidth: 500,
     getReferenceClientRect: () => box,
     onHidden: (instance) => {instance.destroy()}
   }).show()
