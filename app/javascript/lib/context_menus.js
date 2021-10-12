@@ -81,23 +81,46 @@ export function show_add_fragment_menu(element) {
   }).show()
 }
 
+const change_fragment_h1 = `
+<a class="dropdown-item" data-action="mousedown->change-fragment#h1">
+  <span class="has-text-weight-bold">Heading 1</span>
+</a>
+`
+
+const change_fragment_h2 = `
+<a class="dropdown-item" data-action="mousedown->change-fragment#h2">
+  <span class="has-text-weight-semibold">Heading 2</span>
+</a>
+`
+
+const change_fragment_h3 = `
+<a class="dropdown-item" data-action="mousedown->change-fragment#h3">
+  Heading 3
+</a>
+`
+
+const change_fragment_p = `
+<a class="dropdown-item" data-action="mousedown->change-fragment#paragraph">
+  Paragraph
+</a>
+`
+
+const change_fragment_pre = `
+<a class="dropdown-item" data-action="mousedown->change-fragment#pre">
+  Code Block
+</a>
+`
+
 function change_fragment_menu() {
   return(`
   <div class="change-fragment-menu">
     <div class="dropdown-content context-menu">
-      <a class="dropdown-item" data-action="mousedown->change-fragment#h1">
-        <span class="has-text-weight-bold">Heading 1</span>
-      </a>
-      <a class="dropdown-item" data-action="mousedown->change-fragment#h2">
-        <span class="has-text-weight-semibold">Heading 2</span>
-      </a>
-      <a class="dropdown-item" data-action="mousedown->change-fragment#h3">
-        Heading 3
-      </a>
+      ${change_fragment_h1}
+      ${change_fragment_h2}
+      ${change_fragment_h3}
+      ${change_fragment_p}
       <hr class="dropdown-divider">
-      <a class="dropdown-item" data-action="mousedown->change-fragment#paragraph">
-        Paragraph
-      </a>
+      ${change_fragment_pre}
     </div>
   </div>
   `)
