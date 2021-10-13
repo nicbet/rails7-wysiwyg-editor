@@ -68,9 +68,14 @@ export default class extends Controller {
 
   paste(event) {
     event.preventDefault()
-    let content = event.clipboardData.getData('text/plain');
-    // insert text manually
-    document.execCommand("insertText", false, content);
+    if (event.clipboardData) {
+      let content = event.clipboardData.getData('text/plain');
+      let selObj = window.getSelection()
+      let selRange = selObj.getRangeAt(0)
+      selRange.deleteContents()
+      selRange.insertNode(document.createTextNode(content))
+
+    }
   }
 
   save() {

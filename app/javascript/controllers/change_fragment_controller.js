@@ -1,5 +1,4 @@
 import { Controller } from "@hotwired/stimulus"
-import { Turbo } from "@hotwired/turbo-rails"
 import { show_change_fragment_menu } from "../lib/change_fragment_menu"
 
 export default class extends Controller {
@@ -56,7 +55,6 @@ export default class extends Controller {
   }
 
   delete(event) {
-    console.log("Delete Fragment")
     this.element.querySelector("form.button_to").requestSubmit()
   }
 }

@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A WYSIWYG Markdown editor, written in Rails 7 alpha2 with Hotwired Turbo and Stimulus to proof that modern front-end doesn't need to be all React and Vue.js ;-)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Follow along with the development of this proof-of-concept project at http://kuy.io/blog
