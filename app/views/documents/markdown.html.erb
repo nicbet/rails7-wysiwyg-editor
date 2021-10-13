@@ -1,0 +1,20 @@
+<section class="section">
+  <div class="document container" data-controller="clipboard">
+    <h1 class="title is-2 has-text-weight-bold">Markdown</h1>
+    <hr class="mt-3 mb-3">
+    <div class="field is-grouped">
+      <div class="control is-expanded">
+        <%= link_to "Back to document", document_path(@document) %>
+      </div>
+      <div class="control">
+        <div>
+          <div class="has-text-right mb-5">
+            <button class="button is-link" data-action="clipboard#copy">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <pre><code data-clipboard-target="source"><%= @markdown %></code></pre>
+  </div>
+</section>

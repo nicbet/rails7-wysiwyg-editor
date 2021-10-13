@@ -1,5 +1,5 @@
 class DocumentsController < ApplicationController
-  before_action :set_document, only: %i[ show edit update destroy ]
+  before_action :set_document, only: %i[ show edit update destroy markdown]
 
   # GET /documents or /documents.json
   def index
@@ -56,6 +56,14 @@ class DocumentsController < ApplicationController
       format.html { redirect_to documents_url, notice: "Document was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def markdown
+    fragments = @document.fragments.order(position: :asc)
+    source = fragments.map(&:to_md).join("\n\n")
+    formatter = Rouge::Formatters::HTML.new
+    lexer = Rouge::Lexers::Markdown.new
+    @markdown = formatter.format(lexer.lex(source)).html_safe
   end
 
   private
