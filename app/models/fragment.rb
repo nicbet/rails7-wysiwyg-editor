@@ -1,5 +1,6 @@
 class Fragment < ApplicationRecord
   belongs_to :document
+  attr_accessor :saved
 
   acts_as_list
 

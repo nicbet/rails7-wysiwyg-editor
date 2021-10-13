@@ -1,8 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <div class="document container">
-  <h1 class="title is-3 is-document-title"><%= @document.title %></h1>
-  <h2 class="subtitle is-5 has-text-grey"><span class="tag is-link is-dark"><%= @document.note %></span></h2>
+  <div class="with-aside-button">
+    <div class="button-container">
+      <a href="<%= edit_document_path(@document) %>"
+        class="button is-outlined is-round">
+        <i class="gg-pen"></i>
+      </a>
+    </div>
+    <div class="content-container">
+      <h1 class="title is-3 is-document-title"><%= @document.title %></h1>
+      <h2 class="subtitle is-5 has-text-grey"><span class="tag is-link is-dark"><%= @document.note %></span></h2>
+    </div>
+  </div>
   <hr class="mt-2 mb-5">
 
   <%= turbo_frame_tag :fragments do %>

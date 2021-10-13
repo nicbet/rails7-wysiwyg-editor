@@ -25,7 +25,10 @@
     </div>
   </div>
 
-  <div class="actions mt-5">
+  <div class="actions mt-5 has-text-right">
+    <% if document.persisted? %>
+      <%= button_to "Delete", document_path(document), method: :delete, class: "button is-danger" %>
+    <% end %>
     <%= form.submit nil, class: "button is-link" %>
   </div>
 <% end %>

@@ -3,7 +3,7 @@ import { turndownService } from "../lib/turndown_service"
 import rangy from "rangy"
 import "rangy/lib/rangy-textrange"
 
-import { show_format_selection_menu } from "../lib/context_menus"
+import { show_format_selection_menu } from "../lib/format_selection_menu"
 
 export default class extends Controller {
   static targets = [ "editable" ]
@@ -12,12 +12,12 @@ export default class extends Controller {
 
   connect() {
     let classes = this.element.classList
-    let html = this.editableTarget.innerHTML
     if (classes.contains("h1")) { this.fragment_type = "h1" }
     if (classes.contains("h2")) { this.fragment_type = "h2" }
     if (classes.contains("h3")) { this.fragment_type = "h3" }
     if (classes.contains("p")) { this.fragment_type = "p" }
     if (classes.contains("pre")) { this.fragment_type = "pre" }
+    setTimeout(() => {this.element.classList.remove("saved")}, 500)
   }
 
   click(event) {
@@ -76,7 +76,6 @@ export default class extends Controller {
   save() {
     // Convert the element this controller is attached to
     let markdown = turndownService().turndown(this.editableTarget)
-    console.log(markdown)
 
     // Dynamically fill out the form data and submit
     this.element.querySelector("#fragment_data").value = markdown

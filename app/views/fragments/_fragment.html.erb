@@ -1,6 +1,6 @@
 <%= turbo_frame_tag dom_id(fragment) do %>
 
-  <div class="fragment-wrapper <%= fragment.element %>" data-controller="editable change-fragment">
+  <div class="fragment-wrapper <%= fragment.element %> <%= fragment.saved ? 'saved' : '' %>" data-controller="editable change-fragment">
     <div class="fragment-button-container">
       <button
         class="button is-small is-light is-round"
@@ -20,16 +20,17 @@
           mouseup->editable#mouseUp
           mousedown->editable#mouseDown">
         <%= fragment.render %>
-
-        <%= form_with(model: [@document, fragment]) do |form| %>
-          <%= form.text_area(:data, hidden: true) %>
-          <%= form.text_field :element, hidden: true %>
-          <%= form.text_field :meta, hidden: true %>
-          <%= form.text_field :position, hidden: true %>
-          <%= form.submit("Save", hidden: true) %>
-        <% end %>
-
       </div>
+
+      <%= form_with(model: [@document, fragment]) do |form| %>
+        <%= form.text_area(:data, hidden: true) %>
+        <%= form.text_field :element, hidden: true %>
+        <%= form.text_field :meta, hidden: true %>
+        <%= form.text_field :position, hidden: true %>
+        <%= form.submit("Save", hidden: true) %>
+      <% end %>
+
+      <%= button_to "Delete", document_fragment_path(@document, fragment), method: :delete, data: {turbo_method: :delete, turbo_frame: :fragments}, hidden: true %>
     </div>
   </div>
 

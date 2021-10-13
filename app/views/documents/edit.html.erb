@@ -1,10 +1,11 @@
-<h1>Editing document</h1>
+<section class="section">
+  <div class="container">
+    <h1 class="title is-1">Editing document</h1>
 
-<%= render "form", document: @document %>
+    <div class="box mt-5 p-5">
+      <%= render "form", document: @document %>
+    </div>
 
-<br>
-
-<div>
-  <%= link_to "Show this document", @document %> |
-  <%= link_to "Back to documents", documents_path %>
-</div>
+    <div class="mt-3 p-2 has-text-right"><%= link_to "Back to documents", documents_path %></div>
+  </div>
+</section>

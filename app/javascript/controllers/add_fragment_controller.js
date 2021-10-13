@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-import { show_add_fragment_menu } from "../lib/context_menus"
+import { show_add_fragment_menu } from "../lib/add_fragment_menu"
 
 export default class extends Controller {
   showMenu(event) {
