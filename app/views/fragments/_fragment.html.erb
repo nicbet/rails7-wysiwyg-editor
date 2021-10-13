@@ -1,39 +1,44 @@
-<%= turbo_frame_tag dom_id(fragment) do %>
+<div class="draggable">
+  <%= turbo_frame_tag dom_id(fragment) do %>
 
-  <div class="fragment-wrapper <%= fragment.element %> <%= fragment.saved ? 'saved' : '' %>" data-controller="editable change-fragment">
-    <div class="fragment-button-container">
-      <button
-        class="button is-small is-light is-round"
-        data-action="click->change-fragment#showMenu">
-        <i class="gg-chevron-down"></i>
-      </button>
-    </div>
-    <div class="fragment-container">
-      <div
-        class="fragment <%= fragment.element %>"
-        data-editable-target="editable"
-        data-action="
-          click->editable#click
-          blur->editable#blur
-          keydown->editable#keyDown
-          paste->editable#paste
-          mouseup->editable#mouseUp
-          mousedown->editable#mouseDown">
-        <%= fragment.render %>
+    <div class="fragment-wrapper <%= fragment.element %> <%= fragment.saved ? 'saved' : '' %>" data-controller="editable change-fragment">
+      <div class="fragment-button-container">
+
+        <button
+          class="button is-small is-light is-round"
+          data-action="click->change-fragment#showMenu">
+          <i class="gg-chevron-down"></i>
+        </button>
+
+        <span class="button is-outlined is-round is-small handle ml-2"><i class="gg-controller"></i></span>
       </div>
+      <div class="fragment-container">
+        <div
+          class="fragment <%= fragment.element %>"
+          data-editable-target="editable"
+          data-action="
+            click->editable#click
+            blur->editable#blur
+            keydown->editable#keyDown
+            paste->editable#paste
+            mouseup->editable#mouseUp
+            mousedown->editable#mouseDown">
+          <%= fragment.render %>
+        </div>
 
-      <%= form_with(model: [@document, fragment]) do |form| %>
-        <%= form.text_area(:data, hidden: true) %>
-        <%= form.text_field :element, hidden: true %>
-        <%= form.text_field :meta, hidden: true %>
-        <%= form.text_field :position, hidden: true %>
-        <%= form.submit("Save", hidden: true) %>
-      <% end %>
+        <%= form_with(model: [@document, fragment]) do |form| %>
+          <%= form.text_area(:data, hidden: true) %>
+          <%= form.text_field :element, hidden: true %>
+          <%= form.text_field :meta, hidden: true %>
+          <%= form.text_field :position, hidden: true %>
+          <%= form.submit("Save", hidden: true) %>
+        <% end %>
 
-      <%= button_to "Delete", document_fragment_path(@document, fragment), method: :delete, data: {turbo_method: :delete, turbo_frame: :fragments}, hidden: true %>
+        <%= button_to "Delete", document_fragment_path(@document, fragment), method: :delete, data: {turbo_method: :delete, turbo_frame: :fragments}, hidden: true %>
+      </div>
     </div>
-  </div>
 
-<% end %>
+  <% end %>
 
-<%= render "fragments/new", fragment: fragment %>
+  <%= render "fragments/new", fragment: fragment %>
+</div>

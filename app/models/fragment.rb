@@ -2,7 +2,7 @@ class Fragment < ApplicationRecord
   belongs_to :document
   attr_accessor :saved
 
-  acts_as_list
+  acts_as_list scope: :document
 
    MD_MAPPING = {
     "h1" => "# %{data}",

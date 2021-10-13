@@ -1,3 +1,3 @@
 class Document < ApplicationRecord
-  has_many :fragments, dependent: :destroy
+  has_many :fragments, -> { order(position: :asc) }, dependent: :destroy
 end

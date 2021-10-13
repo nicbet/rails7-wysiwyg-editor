@@ -23,3 +23,6 @@ application.register("hello", HelloController)
 
 import PreController from "./pre_controller.js"
 application.register("pre", PreController)
+
+import SortableController from "./sortable_controller.js"
+application.register("sortable", SortableController)

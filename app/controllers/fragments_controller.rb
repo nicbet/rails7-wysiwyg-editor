@@ -10,6 +10,7 @@ class FragmentsController < ApplicationController
   end
 
   def update
+    # if fragment_params[:position]
     @fragment.update(fragment_params)
     @fragment.saved = true
 
