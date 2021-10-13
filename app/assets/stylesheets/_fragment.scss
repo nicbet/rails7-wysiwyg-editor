@@ -37,11 +37,9 @@
       font-size: 14px;
       background-color: #272822;
       border-radius: 5px;
-      box-shadow: 0 1px 1px rgba(0,0,0,0.11),
-                  0 2px 2px rgba(0,0,0,0.11),
-                  0 4px 4px rgba(0,0,0,0.11),
-                  0 6px 8px rgba(0,0,0,0.11),
-                  0 8px 16px rgba(0,0,0,0.11);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+        0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11),
+        0 8px 16px rgba(0, 0, 0, 0.11);
     }
   }
 }
@@ -51,7 +49,7 @@
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  left: -50px;
+  left: -80px;
   width: 63em;
   border: none;
 
@@ -150,7 +148,6 @@
     width: 50px;
     opacity: 0;
     transition: opacity 0.25s ease;
-
   }
 
   .content-container {
@@ -179,12 +176,12 @@
   }
 }
 
- .icon-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 24px;
-    height: 24px;
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
 }
 
 .medium-editor-toolbar li button:hover {
@@ -193,7 +190,7 @@
 }
 .medium-editor-toolbar li .medium-editor-button-active {
   background-color: #000;
-  color: #FFF;
+  color: #fff;
 }
 
 .being-dragged {

@@ -40,6 +40,7 @@ export default class extends Controller {
     this.element.querySelector("#fragment_element").value = element
     this.element.querySelector("#fragment_data").value = data
     this.element.querySelector("#fragment_meta").value = meta
-    this.element.querySelector("form").requestSubmit()
+    // this.element.querySelector("form").requestSubmit()
+    this.element.querySelector("form").querySelector('input[type="submit"]').click()
   }
 }

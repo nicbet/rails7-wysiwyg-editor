@@ -114,6 +114,8 @@ GEM
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.8)
+    nokogiri (1.12.5-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     pg (1.2.3)
@@ -194,6 +196,7 @@ GEM
     zeitwerk (2.5.0.beta5)
 
 PLATFORMS
+  x86_64-darwin-19
   x86_64-linux
 
 DEPENDENCIES

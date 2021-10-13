@@ -1,4 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
+import { navigator } from "@hotwired/turbo"
+
 import { show_change_fragment_menu } from "../lib/change_fragment_menu"
 
 export default class extends Controller {
@@ -49,12 +51,15 @@ export default class extends Controller {
   }
 
   change_to(element, meta="") {
+    console.log(this.element.querySelector("form"))
     this.element.querySelector("#fragment_element").value = element
     this.element.querySelector("#fragment_meta").value = meta
-    this.element.querySelector("form").requestSubmit()
+    // this.element.querySelector("form").requestSubmit()
+    this.element.querySelector("form").querySelector('input[type="submit"]').click()
   }
 
   delete(event) {
-    this.element.querySelector("form.button_to").requestSubmit()
+    // this.element.querySelector("form.button_to").requestSubmit()
+    this.element.querySelector("form.button_to").querySelector('input[type="submit"]').click()
   }
 }
