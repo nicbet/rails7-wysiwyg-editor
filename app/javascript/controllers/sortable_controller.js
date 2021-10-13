@@ -15,7 +15,6 @@ export default class extends Controller {
   }
 
   moved(event) {
-    console.log(`Moved ${event.item} to position ${event.newIndex + 1}`)
     event.item.querySelector("#fragment_position").value = event.newIndex + 1
     console.log(event.item.querySelector("form"))
     event.item.querySelector("form").requestSubmit()
