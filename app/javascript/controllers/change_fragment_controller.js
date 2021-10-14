@@ -60,6 +60,6 @@ export default class extends Controller {
 
   delete(event) {
     // this.element.querySelector("form.button_to").requestSubmit()
-    this.element.querySelector("form.button_to").querySelector('input[type="submit"]').click()
+    this.element.querySelector("form.button_to").querySelector('button[type="submit"]').click()
   }
 }
