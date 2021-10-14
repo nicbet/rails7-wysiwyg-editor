@@ -7,4 +7,4 @@ A WYSIWYG Markdown editor, written in Rails 7 alpha2 with Hotwired Turbo and Sti
 Follow along with the development of this proof-of-concept project at http://kuy.io/blog
 
 - [Part 1](https://kuy.io/blog/posts/modern-front-end-magic-with-rails-7-a-visual-editor-for-markdown-part-1)
-- [Part 1](https://kuy.io/blog/posts/modern-front-end-magic-with-rails-7-a-visual-editor-for-markdown-part-2)
+- [Part 2](https://kuy.io/blog/posts/modern-front-end-magic-with-rails-7-a-visual-editor-for-markdown-part-2)
