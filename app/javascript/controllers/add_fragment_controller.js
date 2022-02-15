@@ -36,6 +36,11 @@ export default class extends Controller {
     this.create_fragment("pre", "your code here ...", language)
   }
 
+  image(event) {
+    event.preventDefault()
+    this.create_fragment("image", "Upload Image")
+  }
+
   create_fragment(element, data, meta = "") {
     this.element.querySelector("#fragment_element").value = element
     this.element.querySelector("#fragment_data").value = data

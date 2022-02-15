@@ -31,6 +31,15 @@
           <%= form.text_field :element, hidden: true %>
           <%= form.text_field :meta, hidden: true %>
           <%= form.text_field :position, hidden: true %>
+          <% if fragment.element == "image" %>
+            <div class="dropzone dropzone-default dz-clickable" data-controller="dropzone" data-dropzone-max-file-size="2" data-dropzone-max-files="1">
+              <%= form.file_field :image, class: "input", direct_upload: true, data: {dropzone_target: 'input'} %>
+              <div class="dropzone-msg dz-message needsclick">
+                <h3 class="dropzone-msg-title">Drag here to upload or click here to browse</h3>
+                <span class="dropzone-msg-desc">2 MB file size maximum. Allowed file types png, jpg.</span>
+                </div>
+              </div>
+          <% end %>
           <%= form.submit("Save", hidden: true) %>
         <% end %>
 

@@ -10,15 +10,12 @@
         </a>
       </div>
       <div class="content-container">
-        <h1 class="title is-3 is-document-title"><%= @document.title %></h1>
-        <h2 class="subtitle is-5 has-text-grey"><span class="tag is-link is-dark"><%= @document.note %></span></h2>
+        <h2 class="subtitle is-5 has-text-grey mb-6"><span class="tag is-link is-dark"><%= @document.note %></span></h2>
+        <h1 class="title is-3 is-document-title mb-3"><%= @document.title %></h1>
       </div>
     </div>
 
-    <hr class="mt-2 mb-5">
-    <div class="has-text-right">
-      <%= link_to "Show Markdown", document_markdown_path(@document) %>
-    </div>
+    <hr>
 
     <%= turbo_frame_tag :fragments do %>
       <div class="fragments-container" data-controller="sortable">
@@ -32,6 +29,9 @@
       <div class="field is-grouped">
         <div class="control is-expanded">
           <%= link_to "Back to Documents", documents_path %>
+        </div>
+        <div class="control">
+          <%= link_to "Export Markdown", document_markdown_path(@document) %>
         </div>
       </div>
 

@@ -29,6 +29,11 @@ const add_fragment_pre = `
   Code Block
 </a>
 `
+const add_fragment_image = `
+<a class="dropdown-item" data-action="mousedown->add-fragment#image">
+  Image
+</a>
+`
 
 function add_fragment_menu() {
   return(`
@@ -39,6 +44,7 @@ function add_fragment_menu() {
       ${add_fragment_h3}
       ${add_fragment_p}
       ${add_fragment_pre}
+      ${add_fragment_image}
     </div>
   </div>
   `)

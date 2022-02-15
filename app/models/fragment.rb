@@ -1,8 +1,9 @@
 class Fragment < ApplicationRecord
   belongs_to :document
-  attr_accessor :saved
-
   acts_as_list scope: :document
+  has_one_attached :image
+
+  attr_accessor :saved
 
    MD_MAPPING = {
     "h1" => "# %{data}",
@@ -12,7 +13,7 @@ class Fragment < ApplicationRecord
     "ol" => "%{data}",
     "ul" => "%{data}",
     "pre" => "```%{meta}\n%{data}\n```",
-    "img" => "![%{meta}](%{data})"
+    "image" => "%{data}"
   }.freeze
 
   def to_md

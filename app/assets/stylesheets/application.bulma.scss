@@ -36,16 +36,18 @@
 // @import "bulma/sass/layout/hero.sass";
 // @import "bulma/sass/layout/section.sass";
 
-@import 'bulma/bulma';
-@import 'tippy.js/dist/tippy';
-@import 'tippy.js/themes/light';
-@import 'css.gg/icons/all';
-@import '@sweetalert2/theme-bulma/bulma.min';
+@import "bulma/bulma";
+@import "tippy.js/dist/tippy";
+@import "tippy.js/themes/light";
+@import "css.gg/icons/all";
+@import "dropzone/dist/min/basic.min";
+@import "dropzone/dist/min/dropzone.min";
 
 @import "document";
 @import "fragment";
 
-html, body {
+html,
+body {
   background-color: white;
 }
 

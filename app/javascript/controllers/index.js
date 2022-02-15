@@ -12,6 +12,9 @@ application.register("change-fragment", ChangeFragmentController)
 import ClipboardController from "./clipboard_controller.js"
 application.register("clipboard", ClipboardController)
 
+import DropzoneController from "./dropzone_controller.js"
+application.register("dropzone", DropzoneController)
+
 import EditableController from "./editable_controller.js"
 application.register("editable", EditableController)
 
