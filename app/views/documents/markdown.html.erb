@@ -1,15 +1,37 @@
 <section class="section">
   <div class="document container" data-controller="clipboard">
-    <h1 class="title is-2 has-text-weight-bold">Markdown</h1>
-    <hr class="mt-3 mb-3">
-    <div class="field is-grouped">
-      <div class="control is-expanded">
-        <%= link_to "Back to document", document_path(@document) %>
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+      <ul>
+        <li><%= link_to("Documents", root_path) %></li>
+        <li><%= link_to(@document.title, @document) %></li>
+        <li class="is-active"><a href="#" aria-current="page">Markdown</a></li>
+      </ul>
+    </nav>
+
+    <div class="with-aside-button mb-6">
+      <div class="button-container">
+
       </div>
-      <div class="control">
-        <div>
-          <div class="has-text-right mb-5">
-            <button class="button is-link" data-action="clipboard#copy">Copy</button>
+      <div class="content-container">
+
+        <div class="level mb-0">
+          <div class="level-left">
+            <div class="level-item">
+              <h1 class="title is-3 is-document-title">Markdown Preview</h1>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <div class="field is-grouped">
+                <div class="control">
+                  <div>
+                    <div class="has-text-right">
+                      <button class="button is-white" data-action="clipboard#copy"><i class="gg-clipboard"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

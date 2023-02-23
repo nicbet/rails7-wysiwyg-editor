@@ -7,7 +7,7 @@ export default class extends Controller {
 
   fragment_type = "p"
 
-  connect() {
+  connect () {
     let classes = this.element.classList
     if (classes.contains("h1")) { this.fragment_type = "h1" }
     if (classes.contains("h2")) { this.fragment_type = "h2" }
@@ -16,32 +16,32 @@ export default class extends Controller {
     if (classes.contains("pre")) { this.fragment_type = "pre" }
   }
 
-  showMenu(event) {
+  showMenu (event) {
     event.preventDefault()
     show_change_fragment_menu(this.element.querySelector("button"))
   }
 
-  h1(event) {
+  h1 (event) {
     event.preventDefault()
     this.change_to("h1")
   }
 
-  h2(event) {
+  h2 (event) {
     event.preventDefault()
     this.change_to("h2")
   }
 
-  h3(event) {
+  h3 (event) {
     event.preventDefault()
     this.change_to("h3")
   }
 
-  paragraph(event) {
+  paragraph (event) {
     event.preventDefault()
     this.change_to("p")
   }
 
-  pre(event) {
+  pre (event) {
     event.preventDefault()
     var language = prompt("Language", "plain");
     if (language == null) {
@@ -50,16 +50,16 @@ export default class extends Controller {
     this.change_to("pre", language)
   }
 
-  change_to(element, meta="") {
+  change_to (element, meta = "") {
     console.log(this.element.querySelector("form"))
     this.element.querySelector("#fragment_element").value = element
     this.element.querySelector("#fragment_meta").value = meta
-    // this.element.querySelector("form").requestSubmit()
+
     this.element.querySelector("form").querySelector('input[type="submit"]').click()
   }
 
-  delete(event) {
-    // this.element.querySelector("form.button_to").requestSubmit()
+  delete (event) {
+
     this.element.querySelector("form.button_to").querySelector('button[type="submit"]').click()
   }
 }

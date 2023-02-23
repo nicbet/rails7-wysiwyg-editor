@@ -1,8 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <section class="section">
+
   <div class="document container">
-    <div class="with-aside-button">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+      <ul>
+        <li><%= link_to("Documents", root_path) %></li>
+        <li class="is-active"><a href="#" aria-current="page"><%= @document.title %></a></li>
+      </ul>
+    </nav>
+
+    <div class="with-aside-button mb-4">
       <div class="button-container">
         <a href="<%= edit_document_path(@document) %>"
           class="button is-outlined is-round">
@@ -10,12 +18,27 @@
         </a>
       </div>
       <div class="content-container">
-        <h2 class="subtitle is-5 has-text-grey mb-6"><span class="tag is-link is-dark"><%= @document.note %></span></h2>
-        <h1 class="title is-3 is-document-title mb-3"><%= @document.title %></h1>
+
+        <div class="level mb-0">
+          <div class="level-left">
+            <div class="level-item">
+              <h1 class="title is-3 is-document-title"><%= @document.title %></h1>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <div class="field is-grouped">
+                <div class="control">
+                  <%= link_to document_markdown_path(@document) do %>
+                    <i class="gg-export"></i>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <hr>
 
     <%= turbo_frame_tag :fragments do %>
       <div class="fragments-container" data-controller="sortable">
@@ -23,19 +46,6 @@
       </div>
     <% end %>
 
-    <!-- Links -->
-    <div class="mt-6">
-      <hr>
-      <div class="field is-grouped">
-        <div class="control is-expanded">
-          <%= link_to "Back to Documents", documents_path %>
-        </div>
-        <div class="control">
-          <%= link_to "Export Markdown", document_markdown_path(@document) %>
-        </div>
-      </div>
-
-    </div>
 
   </div>
 

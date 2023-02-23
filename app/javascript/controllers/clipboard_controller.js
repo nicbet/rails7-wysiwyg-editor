@@ -2,9 +2,9 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "source" ]
+  static targets = ["source"]
 
-  copy() {
+  copy () {
     event.preventDefault()
     window.getSelection().removeAllRanges()
 

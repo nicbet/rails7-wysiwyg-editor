@@ -1,12 +1,31 @@
 <p id="notice"><%= notice %></p>
 
 <section class="section">
-  <div class="container">
-    <h1 class="title is-1">Documents</h1>
+  <div class="document container">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+      <ul>
+        <li class="is-active"><%= link_to("Documents", root_path) %></li>
+      </ul>
+    </nav>
 
-    <div class="field is-grouped is-grouped-right">
-      <div class="control"><%= link_to "New Document", new_document_path, class: "button is-link mb-5" %></div>
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <h1 class="title is-3 is-document-title">Your Documents</h1>
+        </div>
+      </div>
+      <div class="level-right">
+        <div class="level-item">
+          <div class="control">
+            <%= link_to new_document_path, class: "button with-icon" do %>
+              <i class="gg-math-plus"></i>
+              <span>New Document</span>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
+
 
     <hr class="mt-3 mb-6">
 

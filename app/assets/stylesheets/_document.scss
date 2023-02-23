@@ -16,3 +16,52 @@
   line-height: 42px;
   font-weight: 700;
 }
+
+.with-aside-button {
+  left: -50px;
+  width: 63em;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+
+  &:hover {
+    .button-container {
+      opacity: 1;
+      transition: opacity 0.25s ease;
+    }
+  }
+
+  .button-container {
+    --ggs: 0.6;
+    margin-top: 6px;
+    width: 50px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .content-container {
+    flex-grow: 1;
+    width: 100%;
+  }
+}
+
+.button.with-icon {
+  display: inline-flex;
+  align-items: center;
+  i {
+    --ggs: 0.75;
+    margin-top: 1px;
+    margin-right: 4px;
+  }
+}
+
+a.box {
+  border: 1px solid #EEE;
+  box-shadow: none;
+}
+
+a.box:hover {
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
+}

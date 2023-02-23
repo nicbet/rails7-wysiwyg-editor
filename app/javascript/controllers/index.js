@@ -21,9 +21,6 @@ application.register("editable", EditableController)
 import FormatController from "./format_controller.js"
 application.register("format", FormatController)
 
-import HelloController from "./hello_controller.js"
-application.register("hello", HelloController)
-
 import PreController from "./pre_controller.js"
 application.register("pre", PreController)
 
