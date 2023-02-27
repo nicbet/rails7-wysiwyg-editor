@@ -1,42 +1,21 @@
-<section class="section">
-  <div class="document container" data-controller="clipboard">
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-      <ul>
-        <li><%= link_to("Documents", root_path) %></li>
-        <li><%= link_to(@document.title, @document) %></li>
-        <li class="is-active"><a href="#" aria-current="page">Markdown</a></li>
-      </ul>
-    </nav>
+<%= page(title: @document.title) do |p| %>
 
-    <div class="with-aside-button mb-6">
-      <div class="button-container">
+  <% p.breadcrumbs do |breadcrumbs| %>
+    <% breadcrumbs.breadcrumb(label: "Documents", href: documents_path) %>
+    <% breadcrumbs.breadcrumb(label: @document.title, href: document_path(@document)) %>
+    <% breadcrumbs.breadcrumb(label: "Markdown Preview", href: "#", active: true) %>
+  <% end %>
 
-      </div>
-      <div class="content-container">
+  <% p.actions do %>
+    <%= link_to document_path(@document), class: "button with-icon is-primary" do %>
+      <i class="gg-arrow-left"></i>
+      <span>Back to Document</span>
+    <% end %>
+  <% end %>
 
-        <div class="level mb-0">
-          <div class="level-left">
-            <div class="level-item">
-              <h1 class="title is-3 is-document-title">Markdown Preview</h1>
-            </div>
-          </div>
-          <div class="level-right">
-            <div class="level-item">
-              <div class="field is-grouped">
-                <div class="control">
-                  <div>
-                    <div class="has-text-right">
-                      <button class="button is-white" data-action="clipboard#copy"><i class="gg-clipboard"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+  <div class="markdown-preview" data-controller="clipboard">
+    <button class="button is-small" data-action="click->clipboard#copy"><i class="gg-clipboard"></i></button>
     <pre><code data-clipboard-target="source"><%= @markdown %></code></pre>
   </div>
-</section>
+
+<% end %>

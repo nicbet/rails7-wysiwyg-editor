@@ -1,0 +1,9 @@
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><%= link_to("Bloggy", root_path) %></li>
+
+    <% breadcrumbs.each do |breadcrumb| %>
+      <%= breadcrumb %>
+    <% end %>
+  </ul>
+</nav>

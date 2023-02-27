@@ -29,8 +29,8 @@ const format_selection_code = `
 </a>
 `
 
-function format_selection_menu() {
-  return(`
+function format_selection_menu () {
+  return (`
   <div class="p-1" data-controller="format">
     ${format_selection_bold}
     <span class="ml-1 mr-1 has-text-grey">|</span>
@@ -45,16 +45,16 @@ function format_selection_menu() {
   `)
 }
 
-export function show_format_selection_menu(element) {
+export function show_format_selection_menu (element) {
   let box = window.getSelection().getRangeAt(0).getBoundingClientRect()
   return tippy(element, {
     allowHTML: true,
+    appendTo: document.body,
     content: format_selection_menu(),
     interactive: true,
     interactiveBorder: 100,
-    inlinePositioning: true,
     maxWidth: 500,
     getReferenceClientRect: () => box,
-    onHidden: (instance) => {instance.destroy()}
+    onHidden: (instance) => { instance.destroy() }
   }).show()
 }

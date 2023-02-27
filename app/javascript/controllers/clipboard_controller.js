@@ -15,6 +15,6 @@ export default class extends Controller {
     document.execCommand("copy")
     window.getSelection().collapseToEnd()
 
-    this.element.querySelector("button").textContent = "Copied!"
+    this.element.querySelector("button i").classList.value = "gg-check"
   }
 }

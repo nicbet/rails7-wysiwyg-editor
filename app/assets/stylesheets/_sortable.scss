@@ -1,0 +1,16 @@
+.draggable {
+  cursor: grab;
+}
+
+.sortable-chosen, .sortable-ghost, .sortable-drag {
+  .fragment-button-container {
+    opacity: 0;
+  }
+}
+
+.sortable-ghost {
+
+  .fragment-container {
+    background-color: $link-light !important;
+  }
+}

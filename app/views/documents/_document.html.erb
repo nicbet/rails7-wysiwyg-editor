@@ -1,8 +1,9 @@
-  <%= link_to document, id: dom_id(document), class: "box mt-3 mb-3 is-flex is-flex-direction-row is-align-items-center" do %>
-    <div class="div">
-      <div class="title is-6"><%= document.title %></div>
-    </div>
+  <%= tag.div class: "box is-flex is-flex-direction-row is-align-items-center" do %>
+    <%= link_to document, id: dom_id(document) do %>
+      <div class="is-6"><%= document.title %></div>
+    <% end %>
     <div class="is-flex-grow-1 has-text-right">
-      <h3 class="subtitle is-6"><span class="tag is-grey"><%= document.note %></span></h3>
+      <%= link_to "Change Metadata", edit_document_path(document), class: "button is-small is-link is-light" %>
+      <%= link_to "Edit Document", document_path(document), class: "button is-small is-warning is-light" %>
     </div>
   <% end %>

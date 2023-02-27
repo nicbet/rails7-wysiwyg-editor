@@ -1,44 +1,18 @@
-<p id="notice"><%= notice %></p>
+<%= page(title: @document.title) do |p| %>
 
-<section class="section">
+ <% p.breadcrumbs do |breadcrumbs| %>
+   <% breadcrumbs.breadcrumb(label: "Documents", href: documents_path) %>
+   <% breadcrumbs.breadcrumb(label: @document.title, href: document_path(@document), active: true) %>
+ <% end %>
 
-  <div class="document container">
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-      <ul>
-        <li><%= link_to("Documents", root_path) %></li>
-        <li class="is-active"><a href="#" aria-current="page"><%= @document.title %></a></li>
-      </ul>
-    </nav>
+ <% p.actions do %>
+   <%= link_to document_markdown_path(@document), class: "button with-icon is-primary" do %>
+     <i class="gg-attribution"></i>
+     <span>Render Markdown</span>
+   <% end %>
+ <% end %>
 
-    <div class="with-aside-button mb-4">
-      <div class="button-container">
-        <a href="<%= edit_document_path(@document) %>"
-          class="button is-outlined is-round">
-          <i class="gg-pen"></i>
-        </a>
-      </div>
-      <div class="content-container">
-
-        <div class="level mb-0">
-          <div class="level-left">
-            <div class="level-item">
-              <h1 class="title is-3 is-document-title"><%= @document.title %></h1>
-            </div>
-          </div>
-          <div class="level-right">
-            <div class="level-item">
-              <div class="field is-grouped">
-                <div class="control">
-                  <%= link_to document_markdown_path(@document) do %>
-                    <i class="gg-export"></i>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="document">
 
     <%= turbo_frame_tag :fragments do %>
       <div class="fragments-container" data-controller="sortable">
@@ -46,7 +20,6 @@
       </div>
     <% end %>
 
-
   </div>
 
-</section>
+<% end %>

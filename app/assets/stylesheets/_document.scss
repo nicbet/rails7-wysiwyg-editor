@@ -1,10 +1,20 @@
+.document-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0em;
+
+  &:not(:last-of-type) {
+    margin-bottom: 3em;
+  }
+}
+
 .document {
-  max-width: 64em !important;
-  padding: 1em 2em;
+  // max-width: 64rem !important;
+  padding: 4em 8em;
   min-height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
   background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
 }
 
 [contenteditable] {
@@ -44,16 +54,6 @@
   .content-container {
     flex-grow: 1;
     width: 100%;
-  }
-}
-
-.button.with-icon {
-  display: inline-flex;
-  align-items: center;
-  i {
-    --ggs: 0.75;
-    margin-top: 1px;
-    margin-right: 4px;
   }
 }
 

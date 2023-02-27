@@ -1,0 +1,24 @@
+.markdown-preview {
+  .button {
+    --ggs: 0.75;
+    position: relative;
+    z-index: 1;
+    top: 38px;
+    left: calc(100% - 45px);
+    color: white;
+    background-color: transparent;
+    padding: 0.25rem 0.25rem;
+    width: 3em;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      border-color: white;
+    }
+    &:focus, &:active {
+      border-color: white;
+    }
+  }
+}

@@ -1,11 +1,21 @@
-<section class="section">
-  <div class="container">
-    <h1 class="title is-1">New document</h1>
+<%= page(title: "New Document") do |p| %>
 
-    <div class="box mt-5 p-5">
-      <%= render "form", document: @document %>
-    </div>
+ <% p.breadcrumbs do |breadcrumbs| %>
+   <% breadcrumbs.breadcrumb(label: "Documents", href: documents_path) %>
+   <% breadcrumbs.breadcrumb(label: "New", href: "#", active: true) %>
+ <% end %>
 
-    <div class="mt-3 p-2 has-text-right"><%= link_to "Back to documents", documents_path %></div>
+ <% p.actions do %>
+  <%= link_to documents_path, class: "button with-icon is-primary" do %>
+     <i class="gg-arrow-left"></i>
+     <span>Back to documents</span>
+   <% end %>
+ <% end %>
+
+  <div class="box mt-5 p-5">
+    <%= render "form", document: @document %>
   </div>
-</section>
+
+  <div class="mt-3 p-2 has-text-right"></div>
+
+<% end %>

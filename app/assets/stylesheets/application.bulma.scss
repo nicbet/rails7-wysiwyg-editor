@@ -43,12 +43,15 @@
 @import "dropzone/dist/min/basic.min";
 @import "dropzone/dist/min/dropzone.min";
 
+@import "page";
 @import "document";
 @import "fragment";
+@import "sortable";
+@import "markdown";
 
 html,
 body {
-  background-color: white;
+  background-color: #F3F4F5;
 }
 
 .context-menu {
@@ -57,4 +60,16 @@ body {
 
 pre {
   border-radius: 5px;
+  word-break: break-word;
+  white-space: break-spaces;
+}
+
+.button.with-icon {
+  display: inline-flex;
+  align-items: center;
+  i {
+    --ggs: 0.75;
+    margin-top: 1px;
+    margin-right: 4px;
+  }
 }

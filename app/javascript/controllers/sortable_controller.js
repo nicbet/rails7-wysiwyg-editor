@@ -2,10 +2,8 @@ import { Controller } from "@hotwired/stimulus"
 import { Sortable } from "sortablejs"
 
 export default class extends Controller {
-  connect() {
+  connect () {
     this.sortable = Sortable.create(this.element, {
-      handle: ".handle",
-      ghostClass: "being-dragged",
       direction: "vertical",
       swapThreshold: 0.5,
       invertSwap: true,
@@ -14,7 +12,7 @@ export default class extends Controller {
     })
   }
 
-  moved(event) {
+  moved (event) {
     event.item.querySelector("#fragment_position").value = event.newIndex + 1
     console.log(event.item.querySelector("form"))
     event.item.querySelector("form").requestSubmit()

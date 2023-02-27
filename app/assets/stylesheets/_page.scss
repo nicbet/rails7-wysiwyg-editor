@@ -1,0 +1,49 @@
+.Page {
+  @extend .container;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.Page-Head {
+  padding: 2em;
+  padding-bottom: 1em;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: #F3F4F5;
+  border-bottom: 2px solid #edf0f2;
+}
+
+.Page-Body {
+  padding: 0 2em;
+  padding-bottom: 4em;
+}
+
+.Page-Breadcrumbs {
+  margin-bottom: 1em;
+}
+
+.Page-Heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Page-Title {
+  flex-grow: 1;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.Page-Actions {
+  .button {
+    i {
+      --ggs: 0.65 !important;
+    }
+    height: 2rem;
+    font-size: 0.875rem;
+  }
+}

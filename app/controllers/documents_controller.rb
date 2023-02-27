@@ -3,7 +3,7 @@ class DocumentsController < ApplicationController
 
   # GET /documents or /documents.json
   def index
-    @documents = Document.all
+    @groups = Document.order(note: :asc, updated_at: :desc).all.group_by(&:note)
   end
 
   # GET /documents/1 or /documents/1.json
